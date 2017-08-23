@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 var articles = {
-    'articleone': {
+    'article-one': {
 	    title: 'Article One | Abdulrazzak Jakati',
     	heading: 'Article One',
     	date: 'Sep 5, 2016',
@@ -19,7 +19,7 @@ var articles = {
 	    	This is the content of my first article.
     	</p>`
     },
-    'articletwo': {
+    'article-two': {
     	title:'Article two | Abdulrazzak Jakati',
     	heading: 'Article two',
     	date: 'Sep 10, 2016',
@@ -29,7 +29,7 @@ var articles = {
     	</p>`
     },
 
-    'articlethree': {
+    'article-three': {
     	title:'Article three | Abdulrazzak Jakati',
     	heading: 'Article three',
     	date: 'Sep 15, 2016',
