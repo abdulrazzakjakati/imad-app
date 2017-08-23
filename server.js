@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 var articles = {
-    article-one: {
+    'articleone': {
 	    title: 'Article One | Abdulrazzak Jakati',
     	heading: 'Article One',
     	date: 'Sep 5, 2016',
@@ -19,7 +19,7 @@ var articles = {
 	    	This is the content of my first article.
     	</p>`
     },
-    article-two: {
+    'articletwo': {
     	title:'Article two | Abdulrazzak Jakati',
     	heading: 'Article two',
     	date: 'Sep 10, 2016',
@@ -29,7 +29,7 @@ var articles = {
     	</p>`
     },
 
-    article-three: {
+    'articlethree': {
     	title:'Article three | Abdulrazzak Jakati',
     	heading: 'Article three',
     	date: 'Sep 15, 2016',
@@ -46,7 +46,7 @@ function createTemplate(data) {
 	var heading= data.heading;
 	var content= data.content;
 	
-	var htmlTemplate ='
+	var htmlTemplate =`
 	<html>
 		<head>
 			<title>
@@ -78,21 +78,14 @@ function createTemplate(data) {
 			</div>
 		</body>
 	</html> 
-';
+`;
 return htmlTemplate;
 }
 
 
 app.get('/article-one', function (req, res) {
-  res.send('Article one will be served');
-});
-
-app.get('/article-two', function (req, res) {
-  res.send('Article two will be served');
-});
-
-app.get('/article-three', function (req, res) {
-  res.send('Article three will be served');
+  var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
