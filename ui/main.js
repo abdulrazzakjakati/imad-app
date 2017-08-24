@@ -1,2 +1,5 @@
 console.log('Loaded!');
-alert("Hi! This is awesome...");
+
+//change the text of inner html
+var element=document.getElementById('main-text');
+element.innerHTML='new value';
