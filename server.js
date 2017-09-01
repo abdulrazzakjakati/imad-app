@@ -84,9 +84,9 @@ app.get('/:articleName', function (req, res) {
   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+//app.get('/', function (req, res) {
+ // res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+//});
 
 var counter = 0;
 app.get('/counter', function (req, res) {
