@@ -91,7 +91,7 @@ app.get('/', function (req, res) {
 var count = 0;
 app.get('/counter', function (req, res) {
   counter = count + 1;
-  res.send(counter.toString());
+  res.send(count.toString());
 });
 
 app.get('/ui/main.js', function (req, res) {
