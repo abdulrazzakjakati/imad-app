@@ -80,7 +80,7 @@ return htmlTemplate;
 
 var counter = 0;
 app.get('/counter', function (req, res) {
-  counter = counter++;
+  counter++;
   res.send(counter.toString());
 });
 
