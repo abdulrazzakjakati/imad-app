@@ -88,14 +88,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/temp', function (req, res) {
-
-});
-
-var count = 0;
+var counter = 0;
 app.get('/counter', function (req, res) {
-  counter = count + 1;
-  res.send(count.toString());
+  counter = counter + 1;
+  res.send(counter.toString());
 });
 
 app.get('/ui/main.js', function (req, res) {
