@@ -33,6 +33,7 @@ button.onclick = function() {
 		    // Take some action
 	    	if(request.status === 200){
                 var names = request.responseText;
+                names = JSON.parse(names);
 		    }
 	    }
 	
