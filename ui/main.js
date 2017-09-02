@@ -23,7 +23,7 @@ button.onclick = function() {
 };
 
 //Submit name
-var submit = document.getElementById('submit');
+var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     //make a request to counter endpoint
     var request = new XMLHttpRequest();
