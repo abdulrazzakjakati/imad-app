@@ -23,8 +23,8 @@ button.onclick = function() {
 };
 
 //Submit name
-
-button.onclick = function() {
+var submit = document.getElementById('submit');
+submit.onclick = function() {
     //make a request to counter endpoint
     var request = new XMLHttpRequest();
     //Capture the responce & store it in variable.  
@@ -38,13 +38,16 @@ button.onclick = function() {
                 for (i=0; i<names.length; i++) {
                     list += '<li>' + names[i] + '</li>';
                 }
-                
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
 		    }
 	    }
 	
     };
 	
+	var nameInput = document.getElementById('name');
+	var name = nameInput.value;
 	//Make a request
-	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/counter',true);
+	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
 };
