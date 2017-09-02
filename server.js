@@ -104,6 +104,16 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+var names = [];
+app.get('/submit-name', function (req, res) {
+  //Extract name from query
+  var name = req.query.name;
+  
+  names.push(name);
+  //JSON: JavaScript Object Notation
+  res.send(JSON.stringfy(names));
+});
+
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
