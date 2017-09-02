@@ -23,7 +23,7 @@ button.onclick = function() {
 };
 
 //Submit name
-var 
+
 button.onclick = function() {
     //make a request to counter endpoint
     var request = new XMLHttpRequest();
@@ -32,9 +32,7 @@ button.onclick = function() {
 	    if(request.readyState === XMLHttpRequest.DONE){
 		    // Take some action
 	    	if(request.status === 200){
-		    	var counter = request.responseText;
-		    	var span = document.getElementById('count');
-			    span.innerHTML = counter.toString();
+                var names = request.responseText;
 		    }
 	    }
 	
