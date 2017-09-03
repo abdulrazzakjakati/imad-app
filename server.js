@@ -122,7 +122,7 @@ app.get('/submit-commt', function (req, res) {
   var name = req.query.name;
   var comment = req.query.comment;
   
-    if((name !== 'undefined' && comment !== 'undefined') && (name !== '' && comment !== '')){
+    if((name !== undefined && comment !== undefined) && (name !== '' && comment !== '')){
     
     //Join the array name & comment
   var temp = name + ': says ' + comment;
