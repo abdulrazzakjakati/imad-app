@@ -51,3 +51,34 @@ submit.onclick = function() {
 	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
 };
+
+//code for comment box
+
+var submit = document.getElementById('submit2');
+submit.onclick = function() {
+    //make a request to counter endpoint
+    var request = new XMLHttpRequest();
+    //Capture the responce & store it in variable.  
+    request.onreadystatechange = function () {
+	    if(request.readyState === XMLHttpRequest.DONE){
+		    // Take some action
+	    	if(request.status === 200){
+                var commnents = request.responseText;
+                commnents = JSON.parse(commnents);
+                var list = '';
+                for (i=0; i<commnents.length; i++) {
+                    list += '<li>' + commnents[i] + '</li>';
+                }
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
+		    }
+	    }
+	
+    };
+	
+	var nameInput = document.getElementById('name');
+	var name = nameInput.value;
+	//Make a request
+	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-name?name=' + name,true);
+    request.send(null);
+};
