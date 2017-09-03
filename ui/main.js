@@ -79,6 +79,6 @@ submit.onclick = function() {
 	var commentInput = document.getElementById('comment');
 	var comment = commentInput.value;
 	//Make a request
-	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-commt?comment=' + comment,true);
+	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-commt?name=' + name' + 'comment=' + comment,true);
     request.send(null);
 };
