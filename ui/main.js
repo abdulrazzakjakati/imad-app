@@ -65,11 +65,11 @@ submit.onclick = function() {
 	    	if(request.status === 200){
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
+                comments.reverse();
                 var list = '';
                 for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
-                list.reverse();
                 var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
 		    }
@@ -96,6 +96,7 @@ function loadcomments() {
 	    	if(request.status === 200){
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
+                comments.reverse();
                 var list = '';
                 for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
