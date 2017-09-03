@@ -101,7 +101,6 @@ function loadcomments() {
                 for (i = 0; i<comments.length; i++) {
                     list += '<li>' + comments[i] + '</li>';
                 }
-                list.reverse();
                 var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
 		    }
