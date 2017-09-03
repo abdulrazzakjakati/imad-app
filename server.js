@@ -116,13 +116,21 @@ app.get('/submit-name', function (req, res) {
 });
 
 var comments = [];
+var names = [];
 app.get('/submit-commt', function (req, res) {
   //Extract comment from query
   var comment = req.query.comment;
+  var name = req.query.name;
   
   comments.push(comment);
+  names.push(name);
+  
+  //Join the array name & comment
+  
+  
   //JSON: JavaScript Object Notation
   res.send(JSON.stringify(comments));
+  res.send(JSON.stringify(names));
 });
 
 app.get('/:articleName', function (req, res) {
