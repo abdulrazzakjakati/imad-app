@@ -122,15 +122,11 @@ app.get('/submit-commt', function (req, res) {
   var name = req.query.name;
   var comment = req.query.comment;
   
+    //Join the array name & comment
   var temp = name + ' says ' + comment;
   
   comments.push(temp);
-//  names.push(name);
- 
-  
-  //Join the array name & comment
-  
-  
+
   //JSON: JavaScript Object Notation
   res.send(JSON.stringify(comments));
 });
