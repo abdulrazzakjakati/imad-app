@@ -69,16 +69,16 @@ submit.onclick = function() {
                 for (i=0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
-                var ul = document.getElementById('namelist');
+                var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
 		    }
 	    }
 	
     };
 	
-	var nameInput = document.getElementById('name');
-	var name = nameInput.value;
+	var commentInput = document.getElementById('comment');
+	var comment = commentInput.value;
 	//Make a request
-	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-name?name=' + name,true);
+	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-commt?comment=' + comment,true);
     request.send(null);
 };
