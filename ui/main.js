@@ -66,8 +66,7 @@ submit.onclick = function() {
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
                 var list = '';
-                var temp = commnents.length - 1;
-                for (i = temp; i>=0; i++) {
+                for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
@@ -97,8 +96,7 @@ function loadcomments() {
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
                 var list = '';
-                var temp = commnents.length - 1;
-                for (i = temp; i>=0; i++) {
+                for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
