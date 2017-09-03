@@ -69,6 +69,7 @@ submit.onclick = function() {
                 for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
+                list.reverse();
                 var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
 		    }
@@ -99,6 +100,7 @@ function loadcomments() {
                 for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
+                list.reverse();
                 var ul = document.getElementById('commentlist');
                 ul.innerHTML = list;
 		    }
