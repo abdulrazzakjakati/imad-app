@@ -104,6 +104,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+//code for input box
 var names = [];
 app.get('/submit-name', function (req, res) {
   //Extract name from query
@@ -112,6 +113,16 @@ app.get('/submit-name', function (req, res) {
   names.push(name);
   //JSON: JavaScript Object Notation
   res.send(JSON.stringify(names));
+});
+
+var comments = [];
+app.get('/submit-commt', function (req, res) {
+  //Extract comment from query
+  var comment = req.query.name;
+  
+  comments.push(comment);
+  //JSON: JavaScript Object Notation
+  res.send(JSON.stringify(comments));
 });
 
 app.get('/:articleName', function (req, res) {
