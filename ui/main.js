@@ -96,7 +96,7 @@ function loadcomments() {
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
                 var list = '';
-                for (i = commnents.length; i>=0; i++) {
+                for (i = 0; i<commnents.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
