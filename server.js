@@ -122,7 +122,7 @@ app.get('/submit-commt', function (req, res) {
   var comment = req.query.comment;
   var name = req.query.name;
   
-  var temp = name + 'says' + comment;
+  var temp = name + ' says ' + comment;
   
   comments.push(temp);
 //  names.push(name);
