@@ -85,7 +85,7 @@ submit.onclick = function() {
     request.send(null);
 };
 
-            function loadcomments() {
+function loadcomments() {
     //make a request to counter endpoint
     var request = new XMLHttpRequest();
     //Capture the responce & store it in variable.  
@@ -96,7 +96,7 @@ submit.onclick = function() {
                 var commnents = request.responseText;
                 commnents = JSON.parse(commnents);
                 var list = '';
-                for (i=0; i<commnents.length; i++) {
+                for (i=commnents.length-1; i>=0; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
@@ -109,4 +109,4 @@ submit.onclick = function() {
 	//Make a request
 	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-commt',true);
     request.send(null);
-};
+}
