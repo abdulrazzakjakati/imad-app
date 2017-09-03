@@ -118,7 +118,7 @@ app.get('/submit-name', function (req, res) {
 var comments = [];
 app.get('/submit-commt', function (req, res) {
   //Extract comment from query
-  var comment = req.query.name;
+  var comment = req.query.comment;
   
   comments.push(comment);
   //JSON: JavaScript Object Notation
