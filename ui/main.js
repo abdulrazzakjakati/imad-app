@@ -64,10 +64,10 @@ submit.onclick = function() {
 		    // Take some action
 	    	if(request.status === 200){
                 var commnents = request.responseText;
-                commnents = JSON.parse(commnents);
+                comments = JSON.parse(commnents);
                 comments.reverse();
                 var list = '';
-                for (i = 0; i<commnents.length; i++) {
+                for (i = 0; i<comments.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 var ul = document.getElementById('commentlist');
@@ -94,11 +94,11 @@ function loadcomments() {
 	    if(request.readyState === XMLHttpRequest.DONE){
 		    // Take some action
 	    	if(request.status === 200){
-                var commnents = request.responseText;
+                var comments = request.responseText;
                 commnents = JSON.parse(commnents);
                 comments.reverse();
                 var list = '';
-                for (i = 0; i<commnents.length; i++) {
+                for (i = 0; i<comments.length; i++) {
                     list += '<li>' + commnents[i] + '</li>';
                 }
                 list.reverse();
