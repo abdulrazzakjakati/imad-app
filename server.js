@@ -129,7 +129,7 @@ app.get('/submit-commt', function (req, res) {
   
   
   //JSON: JavaScript Object Notation
-  res.send(JSON.stringify(comments));
+  //res.send(JSON.stringify(comments));
   res.send(JSON.stringify(names));
 });
 
