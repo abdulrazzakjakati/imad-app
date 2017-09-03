@@ -63,8 +63,8 @@ submit.onclick = function() {
 	    if(request.readyState === XMLHttpRequest.DONE){
 		    // Take some action
 	    	if(request.status === 200){
-                var commnents = request.responseText;
-                comments = JSON.parse(commnents);
+                var comments = request.responseText;
+                comments = JSON.parse(comments);
                 comments.reverse();
                 var list = '';
                 for (i = 0; i<comments.length; i++) {
@@ -95,11 +95,11 @@ function loadcomments() {
 		    // Take some action
 	    	if(request.status === 200){
                 var comments = request.responseText;
-                commnents = JSON.parse(commnents);
+                comments = JSON.parse(comments);
                 comments.reverse();
                 var list = '';
                 for (i = 0; i<comments.length; i++) {
-                    list += '<li>' + commnents[i] + '</li>';
+                    list += '<li>' + comments[i] + '</li>';
                 }
                 list.reverse();
                 var ul = document.getElementById('commentlist');
