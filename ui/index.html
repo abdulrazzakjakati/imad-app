@@ -3,7 +3,7 @@
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
     </head>
-    <body id="Commentload">
+    <body onload="loadcomments();">
         <div class="container">
             <div class="center">
                 <img id="madi" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAA1xAAAAJDk2M2VkMWIxLTJjYjUtNGFlNy04ZTUyLWEzZGIzOGFhZmNjYg.jpg" class="img-medium"/>
@@ -22,8 +22,8 @@
            <div class="footer">
             This button <button id="counter">Click Me!</button> has been clicked <span id="count">0</span> times.   
             <hr/>
-            <input type="text" id="name" placeholder="name"></input>
-            <input type="submit" id="submit_btn" value="Submit"></input>
+            <input type="text" id="name" placeholder="name">
+            <input type="submit" id="submit_btn" value="Submit">
           
             <ul id="namelist">
             </ul>
@@ -45,6 +45,32 @@
             <br/>
            </div>
             <script type="text/javascript" src="/ui/main.js">
+            
+            function loadcomments() {
+    //make a request to counter endpoint
+    var request = new XMLHttpRequest();
+    //Capture the responce & store it in variable.  
+    request.onreadystatechange = function () {
+	    if(request.readyState === XMLHttpRequest.DONE){
+		    // Take some action
+	    	if(request.status === 200){
+                var commnents = request.responseText;
+                commnents = JSON.parse(commnents);
+                var list = '';
+                for (i=0; i<commnents.length; i++) {
+                    list += '<li>' + commnents[i] + '</li>';
+                }
+                var ul = document.getElementById('commentlist');
+                ul.innerHTML = list;
+		    }
+	    }
+	
+    };
+	
+	//Make a request
+	request.open('GET','http://abdulrazzakjakati.imad.hasura-app.io/submit-commt',true);
+    request.send(null);
+};
             </script>
         </div>
     </body>
