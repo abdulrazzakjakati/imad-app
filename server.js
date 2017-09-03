@@ -123,7 +123,7 @@ app.get('/submit-commt', function (req, res) {
   var comment = req.query.comment;
   
     //Join the array name & comment
-  var temp = name + ' says ' + comment;
+  var temp = name + ': says ' + comment;
   
   comments.push(temp);
 
