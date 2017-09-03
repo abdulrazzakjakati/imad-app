@@ -104,10 +104,6 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/file', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'file.jsp'));
-});
-
 var names = [];
 app.get('/submit-name', function (req, res) {
   //Extract name from query
