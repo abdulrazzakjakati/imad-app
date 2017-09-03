@@ -119,8 +119,8 @@ var comments = [];
 //var names = [];
 app.get('/submit-commt', function (req, res) {
   //Extract comment from query
-  var comment = req.query.comment;
   var name = req.query.name;
+  var comment = req.query.comment;
   
   var temp = name + ' says ' + comment;
   
