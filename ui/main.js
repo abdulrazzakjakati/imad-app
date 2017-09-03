@@ -76,6 +76,8 @@ submit.onclick = function() {
 	
     };
 	
+	var nameInput = document.getElementById('uname');
+	var name = nameInput.value;
 	var commentInput = document.getElementById('comment');
 	var comment = commentInput.value;
 	//Make a request
