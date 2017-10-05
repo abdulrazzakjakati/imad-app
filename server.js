@@ -84,17 +84,25 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
+var pool = new Pool(config);
+app.get('/test-db', function (req, res) {
+  // make a select request 
+  // return response with result
+  pool.query('SELECT * FROM test', function (err, result){
+     if(err){
+         res.status(500).send(err.toString());
+     } else {
+         res.send(JSON.stringify(result));
+     } 
+  });
+});
+
 app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-app.get('test-db', function (req, res) {
-  // make a select request 
-  // return response with result
 });
 
 app.get('/ui/main.js', function (req, res) {
